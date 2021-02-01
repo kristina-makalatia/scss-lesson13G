@@ -1,0 +1,50 @@
+.section-bg {
+    .wraper {
+       @include d-flex(flex, space-between, center);
+       @media (max-width:768px) {
+            @include d-flex(flex, center, center);
+       }
+       @media (max-width:480px) {
+            @include d-flex(flex, space-between, center);
+       }
+       @extend %size-box;
+       .box-1 {
+           width: $size01;
+           height: $size01;
+           background-color: $color02;
+            @media only screen and (max-width: $brp1) {
+                background-color: pink;
+            }
+            @media (max-width:600px) {
+                background: black;
+            }
+           @include transition-hover(all,0.5s,linear,0.5s);
+           &:hover {
+               background-color: $color03;
+           }
+           .test {
+               font-family: $font01;
+               font-size: 30px; 
+           }
+       }
+       .box-2 {
+           width: $size01;
+           height: $size01;
+           background-color: $color01;
+           @include border(2px,solid, $color03);
+           @include transition-hover(all,0.7s,ease,0.4s);
+           &:hover {
+               background-color: $color04;
+           }
+           .test2 {
+               font-family: $fonts02;
+               @media (max-width:800px) {
+                   color: blue;
+               }
+           }
+       }
+    }
+
+}
+
+
